@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carol.ai - Find Your Killer Customers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        blue: {
+                            500: '#3B82F6',
+                        },
+                        teal: {
+                            400: '#2DD4BF',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+        }
+        
+        .bg-clip-text {
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        
+        .text-transparent {
+            color: transparent;
+        }
+        
+        /* Animation for typing */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        .typing-animation {
+            overflow: hidden;
+            white-space: nowrap;
+            animation: typing 1s steps(40, end);
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="border-b border-gray-800 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-xl font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">carol.ai</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#product" class="text-gray-300 hover:text-white">Product</a>
+                    <a href="#why" class="text-gray-300 hover:text-white">Why Carol.ai</a>
+                    <a href="#path" class="text-gray-300 hover:text-white">Your Path</a>
+                </div>
+                <div>
+                    <button class="bg-gradient-to-r from-blue-500 to-teal-400 px-4 py-2 rounded-full text-sm font-medium">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero section -->
+    <section class="pt-20 pb-16 sm:pt-24 sm:pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl sm:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
+                    Find your killer customer
+                </h1>
+                <p class="text-lg italic text-blue-400 max-w-2xl mx-auto mb-8">
+                    I'm Carol. I find your perfect customers. The more you sell with me, the better I get.
+                </p>
+                <div class="inline-block bg-gradient-to-r from-blue-500/20 to-teal-400/20 rounded-lg px-6 py-3 mb-10">
+                    <p class="text-white font-medium">
+                        Finally, a human-centered AI sales assistant for startup founders
+                    </p>
+                </div>
+                <div class="mt-8">
+                    <button class="bg-gradient-to-r from-blue-500 to-teal-400 px-6 py-3 rounded-full text-white font-medium transition-transform hover:scale-105">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sales Funnel section (FIRST) -->
+    <section id="path" class="py-24 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
+                    Your path to perfect customers
+                </h2>
+                <p class="text-gray-300 max-w-2xl mx-auto mb-4">
+                    Let me guide you through the entire customer acquisition journey
+                </p>
+            </div>
+            
+            <div class="relative max-w-3xl mx-auto">
+                <!-- Funnel steps -->
+                <div class="relative z-10">
+                    <!-- Step 1 -->
+                    <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 mb-12 relative">
+                        <div class="absolute -top-5 left-5 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center font-bold">1</div>
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-16 mb-4 md:mb-0 md:mr-6 text-blue-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold mb-2">Meet your best target companies</h3>
+                                <p class="text-gray-400">
+                                    Carol identifies companies that are the perfect fit for your product based on your specific needs and requirements.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Connector -->
+                    <div class="w-1 h-12 bg-blue-500/50 mx-auto -mt-6 -mb-6 relative z-0"></div>
+                    
+                    <!-- Step 2 -->
+                    <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 mb-12 relative">
+                        <div class="absolute -top-5 left-5 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center font-bold">2</div>
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-16 mb-4 md:mb-0 md:mr-6 text-blue-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold mb-2">Greet the best leads within those companies</h3>
+                                <p class="text-gray-400">
+                                    Find and connect with key decision-makers who are most likely to be interested in your product.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Connector -->
+                    <div class="w-1 h-12 bg-blue-500/50 mx-auto -mt-6 -mb-6 relative z-0"></div>
+                    
+                    <!-- Step 3 -->
+                    <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 relative">
+                        <div class="absolute -top-5 left-5 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center font-bold">3</div>
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-16 mb-4 md:mb-0 md:mr-6 text-blue-400">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="text-xl font-semibold mb-2">Meet your buyer in person, close deals with auto-prepared pitches</h3>
+                                <p class="text-gray-400">
+                                    Turn meetings into closed deals with our AI-powered pitch assistant that creates personalized presentations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bottom tagline -->
+                <div class="text-center mt-16">
+                    <p class="text-xl">All with <span class="font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">carol.ai</span></p>
+                    <button class="mt-6 bg-gradient-to-r from-blue-500 to-teal-400 px-6 py-3 rounded-full text-white font-medium transition-transform hover:scale-105">
+                        Start Finding Customers Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Personalized Opportunities Section -->
+    <section class="py-10 bg-gradient-to-r from-blue-500/10 to-teal-400/10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
+                    Your Personalized Opportunities
+                </h2>
+                <p class="text-gray-300">Carol.ai has identified these high-value connections tailored to your product</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Opportunity 1 -->
+                <div class="bg-gray-900 rounded-xl p-6 border border-blue-400 transition-all hover:scale-102 hover:shadow-lg">
+                    <div class="flex justify-between">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Key Decision Maker</h3>
+                        <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs">Today</span>
+                    </div>
+                    <p class="text-white mb-2">
+                        San Francisco meetup at Salesforce Tower today at 5pm. Ellen Heisenhower, Director of Platform Engineering at Intercom will be attending. Your voice safety observability tool perfectly addresses her team's needs.
+                    </p>
+                    <p class="text-sm text-blue-300 italic">
+                        Insider Intel: She's spearheading Intercom's AI transformation initiative with an estimated budget of $10M+
+                    </p>
+                </div>
+                
+                <!-- Opportunity 2 -->
+                <div class="bg-gray-900 rounded-xl p-6 border border-blue-400 transition-all hover:scale-102 hover:shadow-lg">
+                    <div class="flex justify-between">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Growth Potential</h3>
+                        <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs">Tomorrow</span>
+                    </div>
+                    <p class="text-white mb-2">
+                        Virtual AI Security Summit tomorrow at 2pm PT. James Rodriguez, CISO at NexGen Health, will be speaking about securing voice AI in healthcare. Your solution addresses their compliance requirements.
+                    </p>
+                    <p class="text-sm text-blue-300 italic">
+                        Insider Intel: NexGen is planning to implement voice AI across 12 hospitals in Q2 2025
+                    </p>
+                </div>
+                
+                <!-- Opportunity 3 -->
+                <div class="bg-gray-900 rounded-xl p-6 border border-blue-400 transition-all hover:scale-102 hover:shadow-lg">
+                    <div class="flex justify-between">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Perfect Timing</h3>
+                        <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs">This Week</span>
+                    </div>
+                    <p class="text-white mb-2">
+                        LinkedIn update: Sarah Chen just became VP of AI Innovation at Fintech Solutions. They're building voice assistants for customer service and need robust safety guardrails. Connect with her this week.
+                    </p>
+                    <p class="text-sm text-blue-300 italic">
+                        Insider Intel: She previously expressed concerns about AI safety at Voice Tech Conference
+                    </p>
+                </div>
+                
+                <!-- Opportunity 4 -->
+                <div class="bg-gray-900 rounded-xl p-6 border border-blue-400 transition-all hover:scale-102 hover:shadow-lg">
+                    <div class="flex justify-between">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-400">Market Validation</h3>
+                        <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs">Next Week</span>
+                    </div>
+                    <p class="text-white mb-2">
+                        TechCrunch reported that David Wilson, CTO at CloudVoice, is seeking voice safety partnerships after recent compliance issues. Their growth means they need your enterprise-grade solution.
+                    </p>
+                    <p class="text-sm text-blue-300 italic">
+                        Insider Intel: Recent funding round secured $25M earmarked for security and compliance
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <button class="bg-gradient-to-r from-blue-500 to-teal-400 px-6 py-3 rounded-full text-white font-medium transition-transform hover:scale-105">
+                    Get Daily Insights from Carol
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Onboarding/Chat section (SECOND) -->
+    <section class="py-16 bg-black">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-6">
+                <!-- Main conversation area -->
+                <div class="flex-1 bg-gray-900 rounded-xl border border-gray-800 overflow-hidden flex flex-col">
+                    <div class="bg-gradient-to-r from-blue-500/10 to-teal-400/10 px-6 py-4 border-b border-gray-800">
+                        <h2 class="text-lg font-medium">Tell me about your product and yourself</h2>
+                    </div>
+                    
+                    <!-- Conversation -->
+                    <div class="flex-1 overflow-y-auto px-6 py-4 h-96">
+                        <!-- Assistant message -->
+                        <div class="mb-4 flex justify-start">
+                            <div class="max-w-sm rounded-2xl px-4 py-3 bg-gray-800 text-white">
+                                Hi there, I'm Carol! I'm looking forward to helping you sell. I'd love to understand your product, you and your team! First tell me in its core essence, what problems does your product solve?
+                            </div>
+                        </div>
+                        
+                        <!-- User message -->
+                        <div class="mb-4 flex justify-end">
+                            <div class="max-w-sm rounded-2xl px-4 py-3 bg-blue-500 text-white">
+                                Our product helps companies ensure their AI voice assistants respond safely and ethically, preventing harmful content generation.
+                            </div>
+                        </div>
+                        
+                        <!-- Assistant message -->
+                        <div class="mb-4 flex justify-start">
+                            <div class="max-w-sm rounded-2xl px-4 py-3 bg-gray-800 text-white typing-animation">
+                                That's fascinating! Voice AI safety is critical as these systems become more widespread. What specific industries or company types benefit most from your solution?
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Input area -->
+                    <div class="px-4 py-3 bg-gray-900 border-t border-gray-800 flex">
+                        <button
+                            class="w-10 h-10 rounded-full flex items-center justify-center mr-3 bg-blue-500 hover:bg-blue-600"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                                <line x1="12" y1="19" x2="12" y2="23"></line>
+                                <line x1="8" y1="23" x2="16" y2="23"></line>
+                            </svg>
+                        </button>
+                        <input
+                            type="text"
+                            placeholder="Type your answer..."
+                            class="flex-1 bg-gray-800 border border-gray-700 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                        <button
+                            class="ml-3 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg transition"
+                        >
+                            Send
+                        </button>
+                    </div>
+                    
+                    <!-- Progress indicators -->
+                    <div class="px-4 py-3 flex justify-center">
+                        <div class="flex space-x-2">
+                            <div class="w-2 h-2 rounded-full bg-blue-300"></div>
+                            <div class="w-2 h-2 rounded-full bg-blue-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+                            <div class="w-2 h-2 rounded-full bg-gray-700"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Keywords sidebar -->
+                <div class="md:w-72 bg-gray-900 rounded-xl border border-gray-800 overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500/10 to-teal-400/10 px-6 py-4 border-b border-gray-800">
+                        <h2 class="text-lg font-medium">Keywords</h2>
+                    </div>
+                    <div class="p-4">
+                        <p class="text-sm text-gray-400 mb-3">Carol has learned these about your business:</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gradient-to-r from-blue-500/20 to-teal-400/20 text-blue-300 px-3 py-1 rounded-full text-sm">
+                                AI Safety
+                            </span>
+                            <span class="bg-gradient-to-r from-blue-500/20 to-teal-400/20 text-blue-300 px-3 py-1 rounded-full text-sm">
+                                Voice Assistants
+                            </span>
+                            <span class="bg-gradient-to-r from-blue-500/20 to-teal-400/20 text-blue-300 px-3 py-1 rounded-full text-sm">
+                                Enterprise
+                            </span>
+                            <span class="bg-gradient-to-r from-blue-500/20 to-teal-400/20 text-blue-300 px-3 py-1 rounded-full text-sm">
+                                Compliance
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why choose carol.ai section (THIRD) -->
+    <section id="why" class="py-24 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
+                    Why choose carol.ai
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Smart targeting means better conversations, higher conversion rates, and faster sales cycles.
+                </p>
+            </div>
+            
+            <!-- Three feature boxes (NOW THIRD) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 transition duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500/30 to-teal-400/30 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Habit Forming Process</h3>
+                    <p class="text-gray-400">
+                        Carol secretly helps founders develop the right habit of approaching selling, building a consistent daily practice of targeting.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 transition duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500/30 to-teal-400/30 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Perfect Targeting</h3>
+                    <p class="text-gray-400">
+                        Focus on companies that actually need your product and are ready to buy, not just any prospect.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 transition duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500/30 to-teal-400/30 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Performance-Based</h3>
+                    <p class="text-gray-400">
+                        We only charge when you succeed, a real GTM product powered by human and machine intelligence.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 transition duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500/30 to-teal-400/30 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                            <path d="M12 20v-6"></path>
+                            <path d="M6 20V10"></path>
+                            <path d="M18 20V4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Sales Intelligence</h3>
+                    <p class="text-gray-400">
+                        Get unique insights into buying signals and opportunity windows other platforms miss, based on real-time data.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 transition duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500/30 to-teal-400/30 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Personal Connection</h3>
+                    <p class="text-gray-400">
+                        Build relationships that matter with detailed personalization that goes beyond template emails and generic pitches.
+                    </p>
+                </div>
+                
+                <div class="bg-gray-800 rounded-xl p-6 border border-gray-700 transition duration-300 hover:-translate-y-2">
+                    <div class="w-12 h-12 bg-gradient-to-r from-blue-500/30 to-teal-400/30 rounded-lg flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-400">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Human-AI Synergy</h3>
+                    <p class="text-gray-400">
+                        Combining expert sales intelligence with AI-powered insights for lead generation that feels natural.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<!-- Personalized Opportunities Section -->
+<section class="py-10 bg-gradient-to-r from-blue-500/10 to-teal-400/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
+                Your Custom Growth Opportunities
+            </h2>
+            <p class="text-gray-300">Carol.ai has discovered these premium connections aligned with your solution</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Opportunity 1 -->
+            <div class="bg-gray-900 rounded-xl p-6 border border-blue-400 transition-all hover:scale-102 hover:shadow-lg">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-400">Executive Engagement</h3>
+                    <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs">Today</span>
+                </div>
+                <p class="text-white mb-2">
+                    Join industry leaders at Salesforce Tower this evening where Ellen Heisenhower, Intercom's Platform Engineering Director, will be present. Our analysis shows your observability platform directly solves their current voice AI security challenges.
+                </p>
+                <p class="text-sm text-blue-300 italic">
+                    Key Insight: Leading a $10M+ AI infrastructure overhaul with focus on safety protocols
+                </p>
+            </div>
+            
+            <!-- Opportunity 2 -->
+            <div class="bg-gray-900 rounded-xl p-6 border border-blue-400 transition-all hover:scale-102 hover:shadow-lg">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-400">Strategic Expansion</h3>
+                    <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs">Tomorrow</span>
+                </div>
+                <p class="text-white mb-2">
+                    James Rodriguez, Chief Information Security Officer at NexGen Health, will present on healthcare AI security tomorrow. Your compliance features match exactly what their growing network requires.
+                </p>
+                <p class="text-sm text-blue-300 italic">
+                    Key Insight: Rolling out voice AI systems to a dozen medical facilities this quarter
+                </p>
+            </div>
+            
+            <!-- Opportunity 3 -->
+            <div class="bg-gray-900 rounded-xl p-6 border border-blue-400 transition-all hover:scale-102 hover:shadow-lg">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-400">Ideal Connection</h3>
+                    <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs">This Week</span>
+                </div>
+                <p class="text-white mb-2">
+                    Sarah Chen's recent promotion to VP of AI Innovation at Fintech Solutions creates an ideal opening. They're developing customer-facing voice assistants and need exactly your type of safety infrastructure.
+                </p>
+                <p class="text-sm text-blue-300 italic">
+                    Key Insight: Publicly advocated for stronger AI safety measures at last year's conference
+                </p>
+            </div>
+            
+            <!-- Opportunity 4 -->
+            <div class="bg-gray-900 rounded-xl p-6 border border-blue-400 transition-all hover:scale-102 hover:shadow-lg">
+                <div class="flex justify-between">
+                    <h3 class="text-xl font-semibold mb-2 text-blue-400">Validated Need</h3>
+                    <span class="bg-blue-500/20 text-blue-300 px-2 py-1 rounded-full text-xs">Next Week</span>
+                </div>
+                <p class="text-white mb-2">
+                    CloudVoice's CTO David Wilson is actively seeking security partners according to TechCrunch. Their recent compliance challenges and $25M funding make them an ideal candidate for your enterprise solution.
+                </p>
+                <p class="text-sm text-blue-300 italic">
+                    Key Insight: New capital specifically allocated for security enhancements
+                </p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-8">
+            <button class="bg-gradient-to-r from-blue-500 to-teal-400 px-6 py-3 rounded-full text-white font-medium transition-transform hover:scale-105">
+                Discover More Opportunities
+            </button>
+        </div>
+    </div>
+</section>
+    
+    <!-- Footer -->
+    <footer class="py-12 bg-black border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
