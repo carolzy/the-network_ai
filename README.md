@@ -69,6 +69,20 @@ The application sources event data from:
 - Events are ranked based on relevance to the user's business context
 - By default, the application focuses on tech and startup events in major cities
 
+### Event Data Spreadsheet
+
+For development or testing purposes, you can also use a pre-populated Google Sheets containing event data:
+
+1. Access the event data spreadsheet: [Luma Events Spreadsheet](https://docs.google.com/spreadsheets/d/1yGI2cllPjczO_-u5VELsQ4EbxqxDbLj112acpKL_YKs/edit?gid=353981268)
+2. Download it as a CSV file
+3. Save it to `luma_event_scraper/data/luma_events.csv`
+4. The event search functionality will automatically use this data if available
+
+This is particularly useful if you want to:
+- Test the application without making API calls to Firecrawl
+- Use a curated set of events for demonstration purposes
+- Add your own events to the system for testing
+
 ## Setup Instructions
 
 ### Prerequisites
