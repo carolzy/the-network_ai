@@ -1309,17 +1309,15 @@
 
             const summaryField = form.appendChild(document.createElement('input'));
             summaryField.type = 'hidden';
+            summaryField.name = 'summary';
             summaryField.value = userSummaryText?.textContent;
 
             const keywordsField = form.appendChild(document.createElement('input'));
             keywordsField.type = 'hidden';
+            keywordsField.name = 'keywords';
             keywordsField.value = (keywords || []).join(',');
 
-            btn.disabled = false;
-            btn.textContent = 'Show results';
-            btn.removeEventListener('click', submitAnswer);
-            btn.onclick = () => { form.submit() };
-
+            form.submit();
         }, 2000);
     }
 
