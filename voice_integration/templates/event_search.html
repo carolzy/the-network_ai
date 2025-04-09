@@ -67,14 +67,14 @@
                                 <div class="mb-3">
                                     <label for="userSummary" class="form-label">User Summary</label>
                                     <textarea class="form-control" id="userSummary" rows="3"
-                                        placeholder="Describe yourself, your role, and what you're looking for in events"></textarea>
+                                        placeholder="Describe yourself, your role, and what you're looking for in events">{{ summary }}</textarea>
                                     <div class="form-text">This information will be used to determine event relevance.
                                     </div>
                                 </div>
                                 <div class="mb-3">
                                     <label for="keywords" class="form-label">Keywords</label>
                                     <input type="text" class="form-control" id="keywords"
-                                        placeholder="Enter keywords separated by commas">
+                                        placeholder="Enter keywords separated by commas" value="{{ keywords }}">
                                 </div>
                                 <div class="mb-3">
                                     <label for="location" class="form-label">Location (optional)</label>
@@ -115,20 +115,6 @@
 
             const urlParams = new URLSearchParams(window.location.search);
             const autoSearch = urlParams.get('auto_search') === 'true';
-            const urlKeywords = urlParams.get('keywords');
-            const urlUserSummary = urlParams.get('user_summary');
-
-            if (urlKeywords) {
-                keywordsInput.value = decodeURIComponent(urlKeywords);
-            }
-
-            if (urlUserSummary) {
-                userSummaryInput.value = decodeURIComponent(urlUserSummary);
-            }
-
-            if (urlKeywords) {
-                setTimeout(() => searchForm.dispatchEvent(new Event('submit')), 1000);
-            }
 
             searchForm.addEventListener('submit', async function (e) {
                 e.preventDefault();

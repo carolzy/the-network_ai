@@ -17,7 +17,6 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Any, Optional
 from dotenv import load_dotenv
 import google.generativeai as genai
-from flask import Flask, request, jsonify, render_template
 
 # Configure logging
 logging.basicConfig(
@@ -33,7 +32,7 @@ load_dotenv()
 # Path to the CSV file with events
 CSV_FILE_PATH = os.environ.get(
     "CSV_FILE_PATH",
-    "/Users/carol.zhu/Documents/carol_ai_final/luma_event_scraper/luma_bay_area_events.csv"
+    "./luma_bay_area_events.csv"
 )
 
 # Initialize Gemini
@@ -657,8 +656,6 @@ def format_date(date_str: str) -> str:
         logger.error(f"Error formatting date {date_str}: {str(e)}")
         return date_str
 
-# Create Flask app
-app = Flask(__name__, template_folder='templates')
 
 # Store logs for display
 logs_buffer = []
@@ -677,15 +674,11 @@ buffer_handler = BufferHandler()
 buffer_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
 logger.addHandler(buffer_handler)
 
-@app.route('/')
-def index():
-    """Render the main page"""
-    return render_template('event_search.html', version=VERSION)
 
-@app.route('/api/search_events', methods=['POST'])
-def search_events():
+
+# @app.route('/api/search_events', methods=['POST'])
+def search_events(data, jsonify):
     """API endpoint to search for events"""
-    data = request.json
     keywords = data.get('keywords', '').split(',')
     keywords = [k.strip() for k in keywords if k.strip()]
     user_summary = data.get('user_summary', '')
@@ -723,68 +716,65 @@ def search_events():
             "error": f"An error occurred: {str(e)}"
         }), 500
 
-@app.route('/api/logs')
-def get_logs():
-    """API endpoint to get logs"""
-    return jsonify({"logs": logs_buffer})
 
-@app.route('/api/keywords')
-def get_keywords():
-    """Get suggested keywords"""
-    try:
-        # Default keywords suggestions
-        default_keywords = ["AI", "machine learning", "startup", "venture capital", "blockchain"]
-        auto_search = request.args.get('auto_search') == 'true'
 
-        return jsonify({
-            "success": True,
-            "keywords": default_keywords,
-            "auto_search": auto_search
-        })
-    except Exception as e:
-        logger.error(f"Error getting keywords: {str(e)}")
-        return jsonify({
-            "success": False,
-            "error": str(e)
-        }), 500
+# # @app.route('/api/keywords')
+# def get_keywords():
+#     """Get suggested keywords"""
+#     try:
+#         # Default keywords suggestions
+#         default_keywords = ["AI", "machine learning", "startup", "venture capital", "blockchain"]
+#         auto_search = request.args.get('auto_search') == 'true'
 
-def main():
-    """Main function to run the script"""
-    # try:
-    # Parse command line arguments
-    import argparse
-    parser = argparse.ArgumentParser(description='Combined Event Search Agent')
-    parser.add_argument('--host', type=str, default='0.0.0.0', help='Host to run the server on')
-    parser.add_argument('--port', type=int, default=5000, help='Port to run the server on')
-    parser.add_argument('--debug', action='store_true', help='Run in debug mode')
-    parser.add_argument('--csv', type=str, help='Path to CSV file with events')
-    parser.add_argument('--recency-weight', type=float, help='Weight for recency in scoring (0.0-1.0, default: 0.2)')
+#         return jsonify({
+#             "success": True,
+#             "keywords": default_keywords,
+#             "auto_search": auto_search
+#         })
+#     except Exception as e:
+#         logger.error(f"Error getting keywords: {str(e)}")
+#         return jsonify({
+#             "success": False,
+#             "error": str(e)
+#         }), 500
 
-    args = parser.parse_args()
+# def main():
+#     """Main function to run the script"""
+#     # try:
+#     # Parse command line arguments
+#     import argparse
+#     parser = argparse.ArgumentParser(description='Combined Event Search Agent')
+#     parser.add_argument('--host', type=str, default='0.0.0.0', help='Host to run the server on')
+#     parser.add_argument('--port', type=int, default=5000, help='Port to run the server on')
+#     parser.add_argument('--debug', action='store_true', help='Run in debug mode')
+#     parser.add_argument('--csv', type=str, help='Path to CSV file with events')
+#     parser.add_argument('--recency-weight', type=float, help='Weight for recency in scoring (0.0-1.0, default: 0.2)')
 
-    # Set CSV file path if provided
-    global CSV_FILE_PATH
-    if args.csv:
-        CSV_FILE_PATH = args.csv
-        logger.info(f"Using CSV file: {CSV_FILE_PATH}")
+#     args = parser.parse_args()
 
-    # Set recency weight if provided
-    global RECENCY_WEIGHT
-    if args.recency_weight is not None:
-        RECENCY_WEIGHT = max(0.0, min(1.0, args.recency_weight))
-        logger.info(f"Setting recency weight to {RECENCY_WEIGHT}")
+#     # Set CSV file path if provided
+#     global CSV_FILE_PATH
+#     if args.csv:
+#         CSV_FILE_PATH = args.csv
+#         logger.info(f"Using CSV file: {CSV_FILE_PATH}")
 
-    # Log startup information
-    logger.info(f"Starting Combined Event Search Agent")
-    logger.info(f"Debug mode: {args.debug}")
-    logger.info(f"CSV file: {CSV_FILE_PATH}")
-    logger.info(f"Recency weight: {RECENCY_WEIGHT}")
+#     # Set recency weight if provided
+#     global RECENCY_WEIGHT
+#     if args.recency_weight is not None:
+#         RECENCY_WEIGHT = max(0.0, min(1.0, args.recency_weight))
+#         logger.info(f"Setting recency weight to {RECENCY_WEIGHT}")
 
-    # Verify that the CSV file exists
-    if not os.path.exists(CSV_FILE_PATH):
-        logger.error(f"CSV file not found: {CSV_FILE_PATH}")
-        logger.error("Please make sure the CSV file exists and is accessible")
-        return
+#     # Log startup information
+#     logger.info(f"Starting Combined Event Search Agent")
+#     logger.info(f"Debug mode: {args.debug}")
+#     logger.info(f"CSV file: {CSV_FILE_PATH}")
+#     logger.info(f"Recency weight: {RECENCY_WEIGHT}")
 
-    # Verify that we can load events from the CSV file
-    events = load_events_from_csv()
+#     # Verify that the CSV file exists
+#     if not os.path.exists(CSV_FILE_PATH):
+#         logger.error(f"CSV file not found: {CSV_FILE_PATH}")
+#         logger.error("Please make sure the CSV file exists and is accessible")
+#         return
+
+#     # Verify that we can load events from the CSV file
+#     events = load_events_from_csv()

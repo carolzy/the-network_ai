@@ -1,11 +1,16 @@
 import logging
 import time
 from quart import Quart, render_template, request, jsonify, send_file
-from voice_integration.flow_controller import FlowController
-from voice_integration.voice_processor import VoiceProcessor
-from voice_integration.question_engine import QuestionEngine
-from voice_integration.company_recommender import CompanyRecommender
-import asyncio
+# from voice_integration.flow_controller import FlowController
+# from voice_integration.voice_processor import VoiceProcessor
+# from voice_integration.question_engine import QuestionEngine
+# from voice_integration.company_recommender import CompanyRecommender
+from flow_controller import FlowController
+from voice_processor import VoiceProcessor
+from question_engine import QuestionEngine
+from company_recommender import CompanyRecommender
+# import asyncio
+from event_search_agent import search_events as search_events_api
 
 
 # Configure logging
@@ -32,6 +37,18 @@ async def index():
     greeting = await question_engine.get_question("product")
     first_question = await flow_controller.get_question("product")
     return await render_template("index.html", greeting=greeting, first_question=first_question, version=VERSION)
+
+@app.route("/search/events", methods=['GET','POST'])
+async def event_search():
+    # Render the landing page with the chat interface and keyword generator
+    await flow_controller.reset()
+
+    form = await request.form
+    summary = form.get('summary')
+    keywords = form.get('keywords')
+
+    context = {"summary": summary, "keywords": keywords}
+    return await render_template("event_search.html", version=VERSION, **context)
 
 @app.route("/landing")
 async def landing_page():
@@ -216,6 +233,9 @@ async def test_ui():
 @app.route("/api/search_events", methods=["POST"])
 async def search_events():
     """Search for events based on keywords and location."""
+    data = await request.get_json()
+    return search_events_api(data, jsonify)
+
     data = await request.get_json()
     keywords = data.get("keywords", [])
     location = data.get("location", "SF")
